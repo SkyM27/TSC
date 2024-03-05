@@ -28,7 +28,6 @@ module top;
     .reset_n(reset_n),
     .operand_a(operand_a),
     .operand_b(operand_b),
-    .res(res),
     .opcode(opcode),
     .write_pointer(write_pointer),
     .read_pointer(read_pointer),
@@ -45,6 +44,7 @@ module top;
     .opcode(opcode),
     .write_pointer(write_pointer),
     .read_pointer(read_pointer),
+    .res(res),
     .instruction_word(instruction_word)
    );
 

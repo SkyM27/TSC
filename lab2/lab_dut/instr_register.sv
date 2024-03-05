@@ -40,7 +40,7 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         DIV: res = operand_a / operand_b;
         MOD: res = operand_a % operand_b;
       endcase
-        iw_reg[write_pointer] = '{opcode,operand_a,operand_b};
+        iw_reg[write_pointer] = '{opcode,operand_a,operand_b,res};
     end
 
   // read from the register
