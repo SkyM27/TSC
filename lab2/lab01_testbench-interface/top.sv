@@ -18,6 +18,7 @@ module top;
   opcode_t       opcode; //operatia dintre a si b
   operand_t      operand_a, operand_b;
   address_t      write_pointer, read_pointer;
+  operand_t      res;
   instruction_t  instruction_word;
 
   // instantiate testbench and connect ports
@@ -27,6 +28,7 @@ module top;
     .reset_n(reset_n),
     .operand_a(operand_a),
     .operand_b(operand_b),
+    .res(res),
     .opcode(opcode),
     .write_pointer(write_pointer),
     .read_pointer(read_pointer),
