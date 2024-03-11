@@ -52,12 +52,13 @@ module instr_register_test
     // read back and display same three register locations
     $display("\nReading back the same register locations written...");
     //for (int i=0; i<=2; i++) begin - Cristi 6/3/2024
-      for (int i=0; i<=RD_NR; i++) begin
+      for (int i=0; i<RD_NR; i++) begin
       // later labs will replace this loop with iterating through a
       // scoreboard to determine which addresses were written and
       // the expected values to be read back
       @(posedge clk) read_pointer = i;
       @(negedge clk) print_results;
+      check_results;
     end
 
     @(posedge clk) ;
@@ -70,23 +71,31 @@ module instr_register_test
   end
 
   function void randomize_transaction;//se salveaza valorile generate in iw_reg_test
+  operand_t op_a;
+  operand_t op_b;
+  opcode_t  opc;
+  int wp_t;
+  
+  static int temp = 0; //nu se aloca decat o singura data variabila pentru 'static'
+  
+  op_a = $random(seed)%16; // between -15 and 15. Algoritmul de randomize vine cu verilog-ul. Se iau valori intre 15 si -15 deoarece este signed
+  op_b = $unsigned($random)%16;  // between 0 and 15
+  opc = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+  //cast converteste tipul de variabila. 
+  //se face %8 deoarece sunt 8 operatii
+  wp_t = temp++;
+  
     // A later lab will replace this function with SystemVerilog
     // constrained random values
     //
     // The stactic temp variable is required in order to write to fixed
     // addresses of 0, 1 and 2.  This will be replaceed with randomizeed
     // write_pointer values in a later lab
-    //
-    static int temp = 0; //nu se aloca decat o singura data variabila pentru 'static'
-    //algoritmul de randomize vine cu verilog-ul
-    //se iau valori intre 15 si -15 deoarece este signed
-    operand_a     <= $random(seed)%16;                 // between -15 and 15
-    operand_b     <= $unsigned($random)%16;            // between 0 and 15
-    opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-    //cast converteste tipul de variabila. 
-    //se face %8 deoarece sunt 8 operatii
-    write_pointer <= temp++; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
-    iw_reg_test[write_pointer] = '{opcode,operand_a,operand_b,0}; //se salveaza valorile generate in iw_reg_test
+    operand_a     <= op_a;                 
+    operand_b     <= op_b;          
+    opcode        <= opc; 
+    write_pointer <= wp_t; //temp++ se incrementeaza (creste valoarea cu 1). primeste 0 deoarece ++ este dupa 'temp'
+    iw_reg_test[wp_t] = '{opc,op_a,op_b,0}; //se salveaza valorile generate in iw_reg_test
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -105,8 +114,8 @@ module instr_register_test
   endfunction: print_results
 
   function void check_results;
-  operand_res res = 0;
-    case(iw_reg_test[read_pointer].opcode)
+  operand_res res;
+    case(iw_reg_test[read_pointer].opc)
         ZERO: res = 0;
         PASSA: res = iw_reg_test[read_pointer].op_a;
         PASSB: res = iw_reg_test[read_pointer].op_b;
@@ -120,9 +129,14 @@ module instr_register_test
         MOD: res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
         default : res = 0;
     endcase
-    if (res !== iw_reg_test[read_pointer].res) begin
+    if (res !== instruction_word.res) begin
       $display("ERROR: read value does not match expected value");
-      $display("  Expected: %0d", iw_reg_test[read_pointer].res);
+      $display("  Expected: %0d", instruction_word.res);
+      $display("  Read: %0d", res);
+    end
+    else begin
+      $display("Read value matches expected value");
+      $display("  Expected: %0d", instruction_word.res);
       $display("  Read: %0d", res);
     end
   endfunction: check_results
