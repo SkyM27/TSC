@@ -22,7 +22,7 @@ module instr_register_test
   parameter WR_NR = 100;
   parameter RD_NR = 100;
   parameter READ_ORDER = 1; // 0 = incremental , 1 = decremental, 2 = random
-  parameter WRITE_ORDER = 1; // 0 = incremental , 1 = decremental, 2 = random
+  parameter WRITE_ORDER = 2; // 0 = incremental , 1 = decremental, 2 = random
   
   static int failcounter = 0;
   int seed = 555;
