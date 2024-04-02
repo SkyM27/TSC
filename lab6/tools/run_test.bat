@@ -10,4 +10,4 @@ cd ../sim
 ::vsim -c -do run.do
 
 ::echo %1 %2 %3 %4 %0
-vsim -gui -do "do run.do %1 %2 %3 %4 %5"
+vsim -c -do "do run.do %1 %2 %3 %4 %5"
