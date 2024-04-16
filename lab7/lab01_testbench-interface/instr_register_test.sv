@@ -50,6 +50,7 @@ module instr_register_test
     $display("\nWriting values to register stack...");
     @(posedge clk) load_en = 1'b1;  // enable writing to register
     //repeat (3) begin LAB3
+    reset_iw_reg_test;
     repeat (WR_NR) begin
       @(posedge clk) randomize_transaction;
       @(negedge clk) print_transaction;
@@ -60,9 +61,6 @@ module instr_register_test
     $display("\nReading back the same register locations written...");
     //for (int i=0; i<=2; i++) begin LAB3
       for (int i=0; i<RD_NR; i++) begin
-      // later labs will replace this loop with iterating through a
-      // scoreboard to determine which addresses were written and
-      // the expected values to be read back
       @(posedge clk) case(READ_ORDER)
         0: read_pointer = i % 32; // incremental
         1: read_pointer = 31 - (i % 32); // decremental
@@ -110,7 +108,7 @@ module instr_register_test
 
     operand_a = $random(seed) % 16; // between -15 and 15
     operand_b = $unsigned($random % 16); // between 0 and 15
-    opcode = opcode_t'($unsigned($random % 8)); // between 0 and 7, cast to opcode_t type
+    opcode = opcode_t'($unsigned($random % 9)); // between 0 and 7, cast to opcode_t type // 9 deoarece sunt 8 operatii
     case(WRITE_ORDER)
       0: write_pointer = temp_incrementare++;
       1: write_pointer = temp_decrementare--;
@@ -120,7 +118,7 @@ module instr_register_test
     $display("  opcode = %0d", opcode,);
     $display("  operand_a = %0d",   operand_a);
     $display("  operand_b = %0d\n", operand_b);
-    iw_reg_test[write_pointer] = '{opcode,operand_a,operand_b,0};
+    iw_reg_test[write_pointer] = '{opcode,operand_a,operand_b,{64{'b0}}};
   endfunction: randomize_transaction
 
   function void print_transaction;
@@ -139,33 +137,36 @@ module instr_register_test
     $display("  result = %0d\n", instruction_word.res);
     $display("Fail counter: %0d\n", failcounter);
   endfunction: print_results
-
+  
   function void check_results;
+  if ((instruction_word.op_a === iw_reg_test[read_pointer].op_a) && (instruction_word.op_b === iw_reg_test[read_pointer].op_b) && (instruction_word.opc === iw_reg_test[read_pointer].opc)) //se verifica daca valorile citite sunt egale cu cele scrise
+    begin
   operand_res res;
     case(iw_reg_test[read_pointer].opc)
-        ZERO: res = 0;
+        ZERO: res = {64{1'b0}};
         PASSA: res = iw_reg_test[read_pointer].op_a;
         PASSB: res = iw_reg_test[read_pointer].op_b;
         ADD: res = iw_reg_test[read_pointer].op_a + iw_reg_test[read_pointer].op_b;
         SUB: res = iw_reg_test[read_pointer].op_a - iw_reg_test[read_pointer].op_b;
         MULT: res = iw_reg_test[read_pointer].op_a * iw_reg_test[read_pointer].op_b;
-        DIV: begin
-          if (iw_reg_test[read_pointer].op_b === 0) res = 0;
+        DIV:
+          if (iw_reg_test[read_pointer].op_b === 0) res = {64{'b0}};
           else res = iw_reg_test[read_pointer].op_a / iw_reg_test[read_pointer].op_b;
-        end
         MOD: res = iw_reg_test[read_pointer].op_a % iw_reg_test[read_pointer].op_b;
-        default : res = 0;
+        POW:
+          if (iw_reg_test[read_pointer].op_a === 0) res = {64{'b0}};
+          else res = iw_reg_test[read_pointer].op_a ** iw_reg_test[read_pointer].op_b;
     endcase
     if (res !== instruction_word.res) begin
       $display("ERROR: read value does not match expected value");
-      $display("  Expected: %0d", instruction_word.res);
-      $display("  Read: %0d", res);
+      $display("  Expected(DUT): %0d", instruction_word.res);
+      $display("  Read(TEST): %0d", res);
       failcounter++;
     end
     else begin
       $display("Read value matches expected value");
-      $display("  Expected: %0d", instruction_word.res);
-      $display("  Read: %0d", res);
+      $display("  Expected(DUT): %0d", instruction_word.res);
+      $display("  Read(TEST): %0d", res);
     end
     // if (operand_a !== instruction_word.op_a) begin
     //   $display("ERROR: Operand A is not the same");
@@ -177,6 +178,7 @@ module instr_register_test
     //   $display("  Expected: %0d", instruction_word.op_a);
     //   $display("  Read: %0d", instruction_word.op_a);
     // end
+    end
   endfunction: check_results
 
   function void final_report;
@@ -192,4 +194,12 @@ module instr_register_test
     end
     $fclose(file);
   endfunction:final_report
+
+  function void reset_iw_reg_test; //se reseteaza valorile din iw_reg_test
+    for (int i = 0; i < 32; i++)
+    begin
+      iw_reg_test[i] = '{opc:ZERO,default:0};
+    end
+  endfunction:reset_iw_reg_test
+
 endmodule: instr_register_test

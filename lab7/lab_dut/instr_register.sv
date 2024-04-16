@@ -30,20 +30,26 @@ import instr_register_pkg::*;  // user-defined types are defined in instr_regist
         iw_reg[i] = '{opc:ZERO,default:0};  // reset to all zeros
     end
     else if (load_en) begin
-      case(opcode)
-        ZERO: res = 0;
-        PASSA: res = operand_a;
-        PASSB: res = operand_b;
-        ADD: res = operand_a + operand_b;
-        SUB: res = operand_a - operand_b;
-        MULT: res = operand_a * operand_b;
-        DIV: res = operand_a / operand_b;
-        MOD: res = operand_a % operand_b;
-        //de facut ridicarea la putere acasa
-        //de facut +100 de acasa
-        //de pus timpul pentru fiecare tranzacite $tiime functia, %t in string
+      case (opcode)
+        ZERO : iw_reg[write_pointer] = '{opcode,operand_a,operand_b,{64{1'b0}}};
+        PASSA : iw_reg[write_pointer] = '{opcode,operand_a,operand_b,operand_a};
+        PASSB : iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_b};
+        ADD : iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a + operand_b};
+        SUB : iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a - operand_b};
+        MULT : iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a * operand_b};
+        DIV : if (operand_b === {32{1'b0}})
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,{64{1'b0}}};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a / operand_b};
+        MOD : if (operand_b === {32{1'b0}}) 
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,{64{1'b0}}};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a % operand_b};
+        POW : if (operand_a === {32{1'b0}}) 
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,{64{1'b0}}};
+        else
+          iw_reg[write_pointer] =  '{opcode,operand_a,operand_b,operand_a ** operand_b};
       endcase
-        iw_reg[write_pointer] = '{opcode,operand_a,operand_b,res};
     end
 
   // read from the register

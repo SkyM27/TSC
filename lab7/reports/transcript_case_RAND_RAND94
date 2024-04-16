@@ -1,0 +1,1015 @@
+# 1
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 19:46:13 on Apr 16,2024
+# vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
+# -- Compiling package instr_register_pkg
+# -- Compiling module instr_register
+# -- Importing package instr_register_pkg
+# -- Compiling module instr_register_test
+# ** Warning: (vlog-2121) ../lab01_testbench-interface/instr_register_test.sv(121): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: (vlog-2121) ../lab01_testbench-interface/instr_register_test.sv(153): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: (vlog-2121) ../lab01_testbench-interface/instr_register_test.sv(157): Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 19:46:13 on Apr 16,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GTEST_NAME=case_RAND_RAND94 -GWR_NR=50 -GRD_NR=32 -GWRITE_ORDER=2 -GSEED_VAL=691237 -GREAD_ORDER=2 
+# Start time: 19:46:13 on Apr 16,2024
+# 
+# 
+# ***********************************************************
+# ********  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ********
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# Reseting the instruction register...
+# 
+# Writing values to register stack...
+# At write pointer = 22:, timp 36: 
+#   opcode = 13 
+#   operand_a = -5
+#   operand_b = -2
+# 
+# Writing to register location 22: 
+#   opcode = 13 ()
+#   operand_a = -5
+#   operand_b = -2
+# 
+#   result = 0
+# 
+# At write pointer = 31:, timp 46: 
+#   opcode = 8 
+#   operand_a = -2
+#   operand_b = -9
+# 
+# Writing to register location 31: 
+#   opcode = 8 (POW)
+#   operand_a = -2
+#   operand_b = -9
+# 
+#   result = 0
+# 
+# At write pointer = 28:, timp 56: 
+#   opcode = 11 
+#   operand_a = -9
+#   operand_b = -14
+# 
+# Writing to register location 28: 
+#   opcode = 11 ()
+#   operand_a = -9
+#   operand_b = -14
+# 
+#   result = 0
+# 
+# At write pointer = 20:, timp 66: 
+#   opcode = 4 
+#   operand_a = -14
+#   operand_b = -13
+# 
+# Writing to register location 20: 
+#   opcode = 4 (SUB)
+#   operand_a = -14
+#   operand_b = -13
+# 
+#   result = 0
+# 
+# At write pointer = 24:, timp 76: 
+#   opcode = 7 
+#   operand_a = -13
+#   operand_b = 12
+# 
+# Writing to register location 24: 
+#   opcode = 7 (MOD)
+#   operand_a = -13
+#   operand_b = 12
+# 
+#   result = 0
+# 
+# At write pointer = 23:, timp 86: 
+#   opcode = 14 
+#   operand_a = 12
+#   operand_b = 6
+# 
+# Writing to register location 23: 
+#   opcode = 14 ()
+#   operand_a = 12
+#   operand_b = 6
+# 
+#   result = 0
+# 
+# At write pointer = 24:, timp 96: 
+#   opcode = 3 
+#   operand_a = 6
+#   operand_b = 0
+# 
+# Writing to register location 24: 
+#   opcode = 3 (ADD)
+#   operand_a = 6
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# At write pointer = 4:, timp 106: 
+#   opcode = 15 
+#   operand_a = 0
+#   operand_b = 6
+# 
+# Writing to register location 4: 
+#   opcode = 15 ()
+#   operand_a = 0
+#   operand_b = 6
+# 
+#   result = 0
+# 
+# At write pointer = 16:, timp 116: 
+#   opcode = 12 
+#   operand_a = 6
+#   operand_b = -14
+# 
+# Writing to register location 16: 
+#   opcode = 12 ()
+#   operand_a = 6
+#   operand_b = -14
+# 
+#   result = 0
+# 
+# At write pointer = 12:, timp 126: 
+#   opcode = 9 
+#   operand_a = -14
+#   operand_b = -11
+# 
+# Writing to register location 12: 
+#   opcode = 9 ()
+#   operand_a = -14
+#   operand_b = -11
+# 
+#   result = 0
+# 
+# At write pointer = 14:, timp 136: 
+#   opcode = 7 
+#   operand_a = -11
+#   operand_b = -1
+# 
+# Writing to register location 14: 
+#   opcode = 7 (MOD)
+#   operand_a = -11
+#   operand_b = -1
+# 
+#   result = 0
+# 
+# At write pointer = 8:, timp 146: 
+#   opcode = 14 
+#   operand_a = -1
+#   operand_b = 14
+# 
+# Writing to register location 8: 
+#   opcode = 14 ()
+#   operand_a = -1
+#   operand_b = 14
+# 
+#   result = 0
+# 
+# At write pointer = 28:, timp 156: 
+#   opcode = 7 
+#   operand_a = 14
+#   operand_b = -9
+# 
+# Writing to register location 28: 
+#   opcode = 7 (MOD)
+#   operand_a = 14
+#   operand_b = -9
+# 
+#   result = 0
+# 
+# At write pointer = 21:, timp 166: 
+#   opcode = 0 
+#   operand_a = -9
+#   operand_b = 13
+# 
+# Writing to register location 21: 
+#   opcode = 0 (ZERO)
+#   operand_a = -9
+#   operand_b = 13
+# 
+#   result = 0
+# 
+# At write pointer = 17:, timp 176: 
+#   opcode = 15 
+#   operand_a = 13
+#   operand_b = 3
+# 
+# Writing to register location 17: 
+#   opcode = 15 ()
+#   operand_a = 13
+#   operand_b = 3
+# 
+#   result = 0
+# 
+# At write pointer = 9:, timp 186: 
+#   opcode = 8 
+#   operand_a = 3
+#   operand_b = -8
+# 
+# Writing to register location 9: 
+#   opcode = 8 (POW)
+#   operand_a = 3
+#   operand_b = -8
+# 
+#   result = 0
+# 
+# At write pointer = 1:, timp 196: 
+#   opcode = 0 
+#   operand_a = -8
+#   operand_b = -14
+# 
+# Writing to register location 1: 
+#   opcode = 0 (ZERO)
+#   operand_a = -8
+#   operand_b = -14
+# 
+#   result = 0
+# 
+# At write pointer = 16:, timp 206: 
+#   opcode = 8 
+#   operand_a = -14
+#   operand_b = -3
+# 
+# Writing to register location 16: 
+#   opcode = 8 (POW)
+#   operand_a = -14
+#   operand_b = -3
+# 
+#   result = 0
+# 
+# At write pointer = 11:, timp 216: 
+#   opcode = 0 
+#   operand_a = -3
+#   operand_b = 7
+# 
+# Writing to register location 11: 
+#   opcode = 0 (ZERO)
+#   operand_a = -3
+#   operand_b = 7
+# 
+#   result = 0
+# 
+# At write pointer = 20:, timp 226: 
+#   opcode = 13 
+#   operand_a = 7
+#   operand_b = 12
+# 
+# Writing to register location 20: 
+#   opcode = 13 ()
+#   operand_a = 7
+#   operand_b = 12
+# 
+#   result = 0
+# 
+# At write pointer = 19:, timp 236: 
+#   opcode = 6 
+#   operand_a = 12
+#   operand_b = -7
+# 
+# Writing to register location 19: 
+#   opcode = 6 (DIV)
+#   operand_a = 12
+#   operand_b = -7
+# 
+#   result = 0
+# 
+# At write pointer = 0:, timp 246: 
+#   opcode = 8 
+#   operand_a = -7
+#   operand_b = 7
+# 
+# Writing to register location 0: 
+#   opcode = 8 (POW)
+#   operand_a = -7
+#   operand_b = 7
+# 
+#   result = 0
+# 
+# At write pointer = 0:, timp 256: 
+#   opcode = 6 
+#   operand_a = 7
+#   operand_b = -3
+# 
+# Writing to register location 0: 
+#   opcode = 6 (DIV)
+#   operand_a = 7
+#   operand_b = -3
+# 
+#   result = 0
+# 
+# At write pointer = 14:, timp 266: 
+#   opcode = 10 
+#   operand_a = -3
+#   operand_b = 13
+# 
+# Writing to register location 14: 
+#   opcode = 10 ()
+#   operand_a = -3
+#   operand_b = 13
+# 
+#   result = 0
+# 
+# At write pointer = 19:, timp 276: 
+#   opcode = 13 
+#   operand_a = 13
+#   operand_b = -5
+# 
+# Writing to register location 19: 
+#   opcode = 13 ()
+#   operand_a = 13
+#   operand_b = -5
+# 
+#   result = 0
+# 
+# At write pointer = 30:, timp 286: 
+#   opcode = 6 
+#   operand_a = -5
+#   operand_b = -1
+# 
+# Writing to register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = -5
+#   operand_b = -1
+# 
+#   result = 0
+# 
+# At write pointer = 27:, timp 296: 
+#   opcode = 8 
+#   operand_a = -1
+#   operand_b = 13
+# 
+# Writing to register location 27: 
+#   opcode = 8 (POW)
+#   operand_a = -1
+#   operand_b = 13
+# 
+#   result = 0
+# 
+# At write pointer = 21:, timp 306: 
+#   opcode = 5 
+#   operand_a = 13
+#   operand_b = 14
+# 
+# Writing to register location 21: 
+#   opcode = 5 (MULT)
+#   operand_a = 13
+#   operand_b = 14
+# 
+#   result = 0
+# 
+# At write pointer = 24:, timp 316: 
+#   opcode = 1 
+#   operand_a = 14
+#   operand_b = 8
+# 
+# Writing to register location 24: 
+#   opcode = 1 (PASSA)
+#   operand_a = 14
+#   operand_b = 8
+# 
+#   result = 0
+# 
+# At write pointer = 17:, timp 326: 
+#   opcode = 2 
+#   operand_a = 8
+#   operand_b = 6
+# 
+# Writing to register location 17: 
+#   opcode = 2 (PASSB)
+#   operand_a = 8
+#   operand_b = 6
+# 
+#   result = 0
+# 
+# At write pointer = 21:, timp 336: 
+#   opcode = 3 
+#   operand_a = 6
+#   operand_b = 13
+# 
+# Writing to register location 21: 
+#   opcode = 3 (ADD)
+#   operand_a = 6
+#   operand_b = 13
+# 
+#   result = 0
+# 
+# At write pointer = 25:, timp 346: 
+#   opcode = 15 
+#   operand_a = 13
+#   operand_b = 2
+# 
+# Writing to register location 25: 
+#   opcode = 15 ()
+#   operand_a = 13
+#   operand_b = 2
+# 
+#   result = 0
+# 
+# At write pointer = 12:, timp 356: 
+#   opcode = 10 
+#   operand_a = 2
+#   operand_b = -5
+# 
+# Writing to register location 12: 
+#   opcode = 10 ()
+#   operand_a = 2
+#   operand_b = -5
+# 
+#   result = 0
+# 
+# At write pointer = 25:, timp 366: 
+#   opcode = 8 
+#   operand_a = -5
+#   operand_b = -15
+# 
+# Writing to register location 25: 
+#   opcode = 8 (POW)
+#   operand_a = -5
+#   operand_b = -15
+# 
+#   result = 0
+# 
+# At write pointer = 10:, timp 376: 
+#   opcode = 11 
+#   operand_a = -15
+#   operand_b = 5
+# 
+# Writing to register location 10: 
+#   opcode = 11 ()
+#   operand_a = -15
+#   operand_b = 5
+# 
+#   result = 0
+# 
+# At write pointer = 20:, timp 386: 
+#   opcode = 11 
+#   operand_a = 5
+#   operand_b = -11
+# 
+# Writing to register location 20: 
+#   opcode = 11 ()
+#   operand_a = 5
+#   operand_b = -11
+# 
+#   result = 0
+# 
+# At write pointer = 18:, timp 396: 
+#   opcode = 1 
+#   operand_a = -11
+#   operand_b = -9
+# 
+# Writing to register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = -11
+#   operand_b = -9
+# 
+#   result = 0
+# 
+# At write pointer = 12:, timp 406: 
+#   opcode = 6 
+#   operand_a = -9
+#   operand_b = 9
+# 
+# Writing to register location 12: 
+#   opcode = 6 (DIV)
+#   operand_a = -9
+#   operand_b = 9
+# 
+#   result = 0
+# 
+# At write pointer = 5:, timp 416: 
+#   opcode = 2 
+#   operand_a = 9
+#   operand_b = 0
+# 
+# Writing to register location 5: 
+#   opcode = 2 (PASSB)
+#   operand_a = 9
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# At write pointer = 24:, timp 426: 
+#   opcode = 8 
+#   operand_a = 0
+#   operand_b = 12
+# 
+# Writing to register location 24: 
+#   opcode = 8 (POW)
+#   operand_a = 0
+#   operand_b = 12
+# 
+#   result = 0
+# 
+# At write pointer = 29:, timp 436: 
+#   opcode = 5 
+#   operand_a = 12
+#   operand_b = 7
+# 
+# Writing to register location 29: 
+#   opcode = 5 (MULT)
+#   operand_a = 12
+#   operand_b = 7
+# 
+#   result = 0
+# 
+# At write pointer = 7:, timp 446: 
+#   opcode = 4 
+#   operand_a = 7
+#   operand_b = 14
+# 
+# Writing to register location 7: 
+#   opcode = 4 (SUB)
+#   operand_a = 7
+#   operand_b = 14
+# 
+#   result = 0
+# 
+# At write pointer = 19:, timp 456: 
+#   opcode = 0 
+#   operand_a = 14
+#   operand_b = 3
+# 
+# Writing to register location 19: 
+#   opcode = 0 (ZERO)
+#   operand_a = 14
+#   operand_b = 3
+# 
+#   result = 0
+# 
+# At write pointer = 15:, timp 466: 
+#   opcode = 3 
+#   operand_a = 3
+#   operand_b = 7
+# 
+# Writing to register location 15: 
+#   opcode = 3 (ADD)
+#   operand_a = 3
+#   operand_b = 7
+# 
+#   result = 0
+# 
+# At write pointer = 1:, timp 476: 
+#   opcode = 8 
+#   operand_a = 7
+#   operand_b = 0
+# 
+# Writing to register location 1: 
+#   opcode = 8 (POW)
+#   operand_a = 7
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# At write pointer = 21:, timp 486: 
+#   opcode = 7 
+#   operand_a = 0
+#   operand_b = -2
+# 
+# Writing to register location 21: 
+#   opcode = 7 (MOD)
+#   operand_a = 0
+#   operand_b = -2
+# 
+#   result = 0
+# 
+# At write pointer = 1:, timp 496: 
+#   opcode = 5 
+#   operand_a = -2
+#   operand_b = 11
+# 
+# Writing to register location 1: 
+#   opcode = 5 (MULT)
+#   operand_a = -2
+#   operand_b = 11
+# 
+#   result = 0
+# 
+# At write pointer = 31:, timp 506: 
+#   opcode = 3 
+#   operand_a = 11
+#   operand_b = 11
+# 
+# Writing to register location 31: 
+#   opcode = 3 (ADD)
+#   operand_a = 11
+#   operand_b = 11
+# 
+#   result = 0
+# 
+# At write pointer = 25:, timp 516: 
+#   opcode = 8 
+#   operand_a = 11
+#   operand_b = 1
+# 
+# Writing to register location 25: 
+#   opcode = 8 (POW)
+#   operand_a = 11
+#   operand_b = 1
+# 
+#   result = 22
+# 
+# At write pointer = 17:, timp 526: 
+#   opcode = 7 
+#   operand_a = 1
+#   operand_b = 13
+# 
+# Writing to register location 17: 
+#   opcode = 7 (MOD)
+#   operand_a = 1
+#   operand_b = 13
+# 
+#   result = 22
+# 
+# 
+# Reading back the same register locations written...
+# Read from register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = -11
+#   operand_b = -9
+# 
+#   result = -11
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -11
+#   Read(TEST): -11
+# Read from register location 21: 
+#   opcode = 7 (MOD)
+#   operand_a = 0
+#   operand_b = -2
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 26: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 23: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read from register location 24: 
+#   opcode = 8 (POW)
+#   operand_a = 0
+#   operand_b = 12
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 5: 
+#   opcode = 2 (PASSB)
+#   operand_a = 9
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 1: 
+#   opcode = 5 (MULT)
+#   operand_a = -2
+#   operand_b = 11
+# 
+#   result = -22
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -22
+#   Read(TEST): -22
+# Read from register location 17: 
+#   opcode = 7 (MOD)
+#   operand_a = 1
+#   operand_b = 13
+# 
+#   result = 1
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 1
+#   Read(TEST): 1
+# Read from register location 16: 
+#   opcode = 8 (POW)
+#   operand_a = -14
+#   operand_b = -3
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 15: 
+#   opcode = 3 (ADD)
+#   operand_a = 3
+#   operand_b = 7
+# 
+#   result = 10
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 10
+#   Read(TEST): 10
+# Read from register location 15: 
+#   opcode = 3 (ADD)
+#   operand_a = 3
+#   operand_b = 7
+# 
+#   result = 10
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 10
+#   Read(TEST): 10
+# Read from register location 14: 
+#   opcode = 7 (MOD)
+#   operand_a = -11
+#   operand_b = -1
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read from register location 6: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 31: 
+#   opcode = 3 (ADD)
+#   operand_a = 11
+#   operand_b = 11
+# 
+#   result = 22
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 22
+#   Read(TEST): 22
+# Read from register location 16: 
+#   opcode = 8 (POW)
+#   operand_a = -14
+#   operand_b = -3
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 1: 
+#   opcode = 5 (MULT)
+#   operand_a = -2
+#   operand_b = 11
+# 
+#   result = -22
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -22
+#   Read(TEST): -22
+# Read from register location 7: 
+#   opcode = 4 (SUB)
+#   operand_a = 7
+#   operand_b = 14
+# 
+#   result = -7
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -7
+#   Read(TEST): -7
+# Read from register location 26: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 28: 
+#   opcode = 7 (MOD)
+#   operand_a = 14
+#   operand_b = -9
+# 
+#   result = 5
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 5
+#   Read(TEST): 5
+# Read from register location 8: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read from register location 10: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read from register location 11: 
+#   opcode = 0 (ZERO)
+#   operand_a = -3
+#   operand_b = 7
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 17: 
+#   opcode = 7 (MOD)
+#   operand_a = 1
+#   operand_b = 13
+# 
+#   result = 1
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 1
+#   Read(TEST): 1
+# Read from register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = -11
+#   operand_b = -9
+# 
+#   result = -11
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -11
+#   Read(TEST): -11
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 30: 
+#   opcode = 6 (DIV)
+#   operand_a = -5
+#   operand_b = -1
+# 
+#   result = 5
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 5
+#   Read(TEST): 5
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 18: 
+#   opcode = 1 (PASSA)
+#   operand_a = -11
+#   operand_b = -9
+# 
+#   result = -11
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -11
+#   Read(TEST): -11
+# Read from register location 16: 
+#   opcode = 8 (POW)
+#   operand_a = -14
+#   operand_b = -3
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# Read from register location 12: 
+#   opcode = 6 (DIV)
+#   operand_a = -9
+#   operand_b = 9
+# 
+#   result = -1
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -1
+#   Read(TEST): -1
+# Read from register location 12: 
+#   opcode = 6 (DIV)
+#   operand_a = -9
+#   operand_b = 9
+# 
+#   result = -1
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): -1
+#   Read(TEST): -1
+# Read from register location 2: 
+#   opcode = 0 (ZERO)
+#   operand_a = 0
+#   operand_b = 0
+# 
+#   result = 0
+# 
+# Fail counter: 0
+# 
+# Read value matches expected value
+#   Expected(DUT): 0
+#   Read(TEST): 0
+# 
+# ***********************************************************
+# ********  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ********
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(81)
+#    Time: 866 ns  Iteration: 1  Instance: /top/test
+# End time: 19:46:14 on Apr 16,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
