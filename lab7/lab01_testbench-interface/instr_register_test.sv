@@ -161,12 +161,14 @@ module instr_register_test
       $display("ERROR: read value does not match expected value");
       $display("  Expected(DUT): %0d", instruction_word.res);
       $display("  Read(TEST): %0d", res);
+      $display("________________________________________________");
       failcounter++;
     end
     else begin
       $display("Read value matches expected value");
       $display("  Expected(DUT): %0d", instruction_word.res);
       $display("  Read(TEST): %0d", res);
+      $display("________________________________________________");
     end
     // if (operand_a !== instruction_word.op_a) begin
     //   $display("ERROR: Operand A is not the same");

@@ -1,6 +1,6 @@
 # 1
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
-# Start time: 19:46:15 on Apr 16,2024
+# Start time: 18:02:53 on Apr 23,2024
 # vlog -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -13,10 +13,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 19:46:15 on Apr 16,2024, Elapsed time: 0:00:00
+# End time: 18:02:53 on Apr 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 3
 # vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top -GTEST_NAME=case_RAND_RAND96 -GWR_NR=50 -GRD_NR=32 -GWRITE_ORDER=2 -GSEED_VAL=816439 -GREAD_ORDER=2 
-# Start time: 19:46:15 on Apr 16,2024
+# Start time: 18:02:53 on Apr 23,2024
 # 
 # 
 # ***********************************************************
@@ -651,6 +651,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 15: 
 #   opcode = 3 (ADD)
 #   operand_a = 5
@@ -663,6 +664,7 @@
 # Read value matches expected value
 #   Expected(DUT): 4
 #   Read(TEST): 4
+# ________________________________________________
 # Read from register location 16: 
 #   opcode = 8 (POW)
 #   operand_a = -9
@@ -675,6 +677,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 24: 
 #   opcode = 4 (SUB)
 #   operand_a = 5
@@ -687,6 +690,7 @@
 # Read value matches expected value
 #   Expected(DUT): 5
 #   Read(TEST): 5
+# ________________________________________________
 # Read from register location 10: 
 #   opcode = 4 (SUB)
 #   operand_a = 12
@@ -699,6 +703,7 @@
 # Read value matches expected value
 #   Expected(DUT): -3
 #   Read(TEST): -3
+# ________________________________________________
 # Read from register location 14: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -711,6 +716,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 5: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -732,6 +738,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 2: 
 #   opcode = 1 (PASSA)
 #   operand_a = 1
@@ -744,6 +751,7 @@
 # Read value matches expected value
 #   Expected(DUT): 1
 #   Read(TEST): 1
+# ________________________________________________
 # Read from register location 15: 
 #   opcode = 3 (ADD)
 #   operand_a = 5
@@ -756,6 +764,7 @@
 # Read value matches expected value
 #   Expected(DUT): 4
 #   Read(TEST): 4
+# ________________________________________________
 # Read from register location 23: 
 #   opcode = 4 (SUB)
 #   operand_a = -15
@@ -768,6 +777,7 @@
 # Read value matches expected value
 #   Expected(DUT): -17
 #   Read(TEST): -17
+# ________________________________________________
 # Read from register location 5: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -789,6 +799,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 8: 
 #   opcode = 8 (POW)
 #   operand_a = -2
@@ -810,6 +821,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 8: 
 #   opcode = 8 (POW)
 #   operand_a = -2
@@ -831,6 +843,7 @@
 # Read value matches expected value
 #   Expected(DUT): 1
 #   Read(TEST): 1
+# ________________________________________________
 # Read from register location 19: 
 #   opcode = 2 (PASSB)
 #   operand_a = -1
@@ -843,6 +856,7 @@
 # Read value matches expected value
 #   Expected(DUT): 5
 #   Read(TEST): 5
+# ________________________________________________
 # Read from register location 5: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -864,6 +878,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 2: 
 #   opcode = 1 (PASSA)
 #   operand_a = 1
@@ -876,6 +891,7 @@
 # Read value matches expected value
 #   Expected(DUT): 1
 #   Read(TEST): 1
+# ________________________________________________
 # Read from register location 25: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -888,6 +904,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 28: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -909,6 +926,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 5: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -930,6 +948,7 @@
 # Read value matches expected value
 #   Expected(DUT): 1
 #   Read(TEST): 1
+# ________________________________________________
 # Read from register location 11: 
 #   opcode = 5 (MULT)
 #   operand_a = 14
@@ -942,6 +961,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 20: 
 #   opcode = 7 (MOD)
 #   operand_a = 2
@@ -954,6 +974,7 @@
 # Read value matches expected value
 #   Expected(DUT): 2
 #   Read(TEST): 2
+# ________________________________________________
 # Read from register location 9: 
 #   opcode = 8 (POW)
 #   operand_a = 0
@@ -966,6 +987,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # Read from register location 2: 
 #   opcode = 1 (PASSA)
 #   operand_a = 1
@@ -978,6 +1000,7 @@
 # Read value matches expected value
 #   Expected(DUT): 1
 #   Read(TEST): 1
+# ________________________________________________
 # Read from register location 22: 
 #   opcode = 0 (ZERO)
 #   operand_a = 0
@@ -990,6 +1013,7 @@
 # Read value matches expected value
 #   Expected(DUT): 0
 #   Read(TEST): 0
+# ________________________________________________
 # 
 # ***********************************************************
 # ********  THIS IS A SELF-CHECKING TESTBENCH.  YOU  ********
@@ -999,5 +1023,5 @@
 # 
 # ** Note: $finish    : ../lab01_testbench-interface/instr_register_test.sv(81)
 #    Time: 866 ns  Iteration: 1  Instance: /top/test
-# End time: 19:46:16 on Apr 16,2024, Elapsed time: 0:00:01
+# End time: 18:02:53 on Apr 23,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

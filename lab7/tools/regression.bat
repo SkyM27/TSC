@@ -21,7 +21,7 @@ call run_test.bat 50 32 2 2 case_RAND_RAND1 c 261279
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND2 c 725821
 cd ../tools
-call run_test.bat 50 32 2 2 case_RAND_RAND3 c 649253
+call run_test.bat 50 32 2 2 case_RAND_RAND3 c 592348
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND4 c 608524
 cd ../tools
@@ -137,9 +137,9 @@ call run_test.bat 50 32 2 2 case_RAND_RAND59 c 479816
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND60 c 591823
 cd ../tools
-call run_test.bat 50 32 2 2 case_RAND_RAND61 c 437529
+call run_test.bat 50 32 2 2 case_RAND_RAND61 c 683259
 cd ../tools
-call run_test.bat 50 32 2 2 case_RAND_RAND62 c 854719
+call run_test.bat 50 32 2 2 case_RAND_RAND62 c 942387
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND63 c 673419
 cd ../tools
@@ -179,7 +179,7 @@ call run_test.bat 50 32 2 2 case_RAND_RAND80 c 683219
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND81 c 754392
 cd ../tools
-call run_test.bat 50 32 2 2 case_RAND_RAND82 c 821974
+call run_test.bat 50 32 2 2 case_RAND_RAND82 c 479816
 cd ../tools
 call run_test.bat 50 32 2 2 case_RAND_RAND83 c 673219
 cd ../tools
